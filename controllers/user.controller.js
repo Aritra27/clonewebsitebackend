@@ -70,10 +70,9 @@ const login = async (req, res) => {
     return res
       .cookie("token", token, {
         httpOnly: true,
-        sameSite: "lax",  // Allows cookies to be sent on GET requests
+        sameSite: "none",  // Allows cookies to be sent on GET requests
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
-        secure: false,    // No HTTPS in local development
-        maxAge: 30 * 24 * 60 * 60 * 1000,
+        secure: true,    // No HTTPS in local development
       })
       .json({
         user,
