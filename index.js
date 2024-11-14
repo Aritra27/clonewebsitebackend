@@ -16,8 +16,9 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended:true}))
 
+
 const corsOption={
-    origin:"*",
+    origin:"https://clonewebsitefrontend.vercel.app",
     credentials: true, 
 }
 app.use(cors(corsOption));
